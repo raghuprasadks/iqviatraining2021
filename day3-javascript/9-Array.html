@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+
+    <select>
+        <option>Jan</option>
+        <option>Feb</option>
+        <option>March</option>
+    </select>
+
+    
+    <h1>Array</h1>
+    <script>
+    numarray=[20,21,25,19,17]
+    console.log('num array ',numarray);
+    console.log('data type ',typeof(numarray));
+    console.log('element at index zero : ',numarray[0]);
+    console.log('Length of array : ',numarray.length);
+    numarray[1]=22;
+    numarray.push(23);
+    console.log('updated array ',numarray);
+    elemdel = numarray.pop();
+    console.log('element deleted ',elemdel);
+    console.log('updated array ',numarray);
+    console.log('loop');
+    for (i=0;i<numarray.length;i++)
+        console.log(i);
+    runs=[]
+    runs.push(12)
+    runs.push(22)
+    runs.push(31)
+    runs.push('five')
+    console.log('runs from the scratch ',runs);
+</script>
+</body>
+</html>

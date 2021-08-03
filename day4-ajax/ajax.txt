@@ -1,0 +1,74 @@
+ Functions
+ prototype
+ AJAX - Web Services, JSON - JSON placeholder,OpenWeatherAPP
+ Deploy application - XAMPP
+ Postman
+ JQuery
+
+var - global scope
+
+Assignment on function ..
+
+1. create a function to calculate electricity bill as per the details provided below.
+
+ units consumed upto 100 units - rate 1 rs/unit
+ units consumed between 101 to 200 units - rate 2 rs/unit
+ units consumed between 201 to 300 units - rate 3 rs/unit
+ other than this its 5 rs/unit
+
+ calculateBill(units)
+
+ 50 - 50 X 1 = 50
+ 150 - first 100 units - 100 X 1 next 50 units 50 X 2 -- total 200
+
+
+AJAX - Asynchronous Javascript and XML
+
+<employee>
+<name>Raghu</name>
+</employee>
+
+synchronous
+
+hotel - 
+
+table 1 - place the order - take order - chef -waits - blocking - 3 orders - 
+callback
+
+table 2 - place the order - take order - chef
+
+Web service - program - running on the server - share some information
+
+api - application programming interface using node,express
+web services - ajax
+
+jsonplaceholder -fake webservice
+
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(json => console.log(json))
+
+postman - indian
+
+	Promise -resolve,reject
+	async
+	await
+	observable
+
+ callback hell
+	1. call function 1
+        2. call function 2
+        3. call function 3
+
+Jquery - build on top of javascript - library
+
+angular - framework
+ 
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object and Array</title>
+</head>
+<body>
+    <h1>Employee object</h1>
+    <script>
+    //constructor
+    function employee(empcode,name,desg,dept,sal){
+        this.empcode = empcode;
+        this.name = name;
+        this.desg=desg;
+        this.dept=dept;
+        this.sal = sal;
+        this.getDesignation=function(){
+            return this.desg;
+        };
+        this.getSalary=function(){
+            return this.sal;
+        }
+    }
+    emp1=new employee(1,'raghu','consultant','training',27272);
+    emp2=new employee(2,'ravi','sr engineer','it dev',37272);
+    emp3=new employee(2,'ramya','jr engineer','it dev',17272);
+    console.log('sal ',emp3.sal);
+    emplist=[];
+    emplist.push(emp1);
+    emplist.push(emp2);
+    emplist.push(emp3);
+    totalsal=0;
+   for (var i=0;i<emplist.length;i++){
+        salary = emplist[i].getSalary();
+        totalsal = totalsal +salary;        
+   }
+   console.log('total salary :::',totalsal);
+      </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Demo</title>
+</head>
+<body>
+	<h1>Registration Form</h1>
+	<form action="response.html" method="get">
+		<label>First Name *</label>
+		<input type="text" name="fname" id="fnameid" placeholder = "Enter First Name" required><br>
+		<label>Sex</label>
+		<input type="radio" name="sex">Male
+		<input type="radio" name="sex">Female
+		<input type="radio" name="sex">Others
+		<br>
+		<label>Educational Qualification</label>
+		<input type="checkbox" name="ug">UG
+		<input type="checkbox" name="pg">PG
+		<input type="checkbox" name="oth">Others
+		<br>
+		<label>Select country</label>
+		<select>
+			<option value="ch">china</option>
+			<option value="ind">India</option>
+			<option value="us">USA</option>
+		</select>
+		<br>
+		<label>Date of Birth</label>
+		<input type="Date" name="dob"><br>
+		<input type="submit" value="save">
+	</form>
+
+</body>
+</html>

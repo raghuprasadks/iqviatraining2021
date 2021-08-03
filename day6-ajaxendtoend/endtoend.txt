@@ -1,0 +1,43 @@
+https://www.freecodecamp.org/news/a-practical-es6-guide-on-how-to-perform-http-requests-using-the-fetch-api-594c3d91a547/
+
+
+CRUD - Create ,Read ,Update and Delete
+Web service - Fake Webservice - Json place holder
+
+get
+post
+api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+api.openweathermap.org/data/2.5/weather?q=bengaluru&appid=384db1ce93218e20fd384d3016372238&units=metric
+
+
+{"coord":{"lon":77.6033,"lat":12.9762},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"stations","main":{"temp":299.39,"feels_like":299.39,"temp_min":298.67,"temp_max":300.1,"pressure":937,"humidity":65},"visibility":8000,"wind":{"speed":6.69,"deg":270},"clouds":{"all":40},"dt":1627970943,"sys":{"type":2,"id":2017753,"country":"IN","sunrise":1627950929,"sunset":1627996560},"timezone":19800,"id":1277333,"name":"Bengaluru","cod":200}
+
+
+
+{"coord":{"lon":77.6033,"lat":12.9762},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"stations","main":{"temp":26.24,"feels_like":26.24,"temp_min":25.52,"temp_max":26.95,"pressure":937,"humidity":65},"visibility":8000,"wind":{"speed":6.69,"deg":270},"clouds":{"all":40},"dt":1627970676,"sys":{"type":2,"id":2017753,"country":"IN","sunrise":1627950929,"sunset":1627996560},"timezone":19800,"id":1277333,"name":"Bengaluru","cod":200}
+
+
+
+xampp
+
+git,cvs,
+1. source repository
+2. project - many people
+
+download git
+github.. create an account
+
+
+echo "# iqviatraining2021" >> README.md
+git init
+git add README.md
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/raghuprasadks/iqviatraining2021.git
+git push -u origin main
+
+
+
+

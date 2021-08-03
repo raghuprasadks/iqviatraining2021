@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Master</title>
+</head>
+<body>
+
+    <h1>Employee Master</h1>
+
+    <input type="text" name="code" id="code" placeholder="Enter Employee Code"><br>
+    <input type="text" name="name" id="name" placeholder="Enter Employee Name"><br>
+    <input type="text" name="dept" id="dept" placeholder="Enter Employee Department"><br>
+    <input type="text" name="desg" id="desg" placeholder="Enter Employee Designation"><br>
+    <input type="text" name="sal" id="sal" placeholder="Enter Employee sal"><br>
+    <button onclick="saveEmployee()">Save</button>
+    
+    <table id="result">
+    </table>
+    
+    <script>
+
+    emplist=[];
+
+    function employee(empcode,name,dept,desg,sal){
+        this.empcode = empcode;
+        this.name = name;
+        this.desg=desg;
+        this.dept=dept;
+        this.sal = sal;
+        this.getDesignation=function(){
+            return this.desg;
+        };
+        this.getSalary=function(){
+            return this.sal;
+        }
+    }
+    
+    function displayEmployee(){
+        var data = '';    
+        for (var i=0;i<emplist.length;i++){
+            data = data + '<tr>';
+            data=data+'<td>'+emplist[i].empcode+'</td>'+'<td>'+emplist[i].name+'</td>';    
+            data = data+'</tr>';
+        }
+        document.getElementById('result').innerHTML=data;
+    }
+
+        function saveEmployee(){
+            code = document.getElementById("code").value;
+            name = document.getElementById("name").value;
+            dept = document.getElementById("dept").value;
+            desg = document.getElementById("desg").value;
+            sal = document.getElementById("sal").value;
+            emp = new employee(code,name,dept,desg,sal);
+            emplist.push(emp);
+            console.log('emplist ',emplist);
+            displayEmployee();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo's</title>
+<style>
+    tr,td{
+        border:1px solid blue;
+    }
+
+</style>
+</head>
+<body onload="fetchTodos()">
+    <h1 style="text-align: center; background-color: lightblue;">Todos</h1>
+    <table id="result">
+    </table>
+    <script>
+function displayTodos(todos)
+        {
+            var data = '';
+            for (i=0;i<todos.length;i++)
+            {
+                data = data + '<tr>';
+                 data=data+'<td>'+todos[i].userId+'</td><td>'+todos[i].id+'</td><td>'+todos[i].title+'</td><td>'+todos[i].completed+'</td>';    
+                 data = data+'</tr>';
+            }
+
+            document.getElementById('result').innerHTML=data;
+        }
+        
+        
+        function fetchTodos(){
+            //JSON.stringify()
+            //JSON.parse(data)
+            fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response=>response.json())
+            .then(json=>displayTodos(json))
+        }
+    </script>
+
+</body>
+</html>

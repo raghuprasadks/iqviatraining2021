@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Constructor</title>
+</head>
+<body>
+    <h1>Employee object</h1>
+    <script>
+    //constructor
+    function employee(empcode,name,desg,dept,sal){
+        this.empcode = empcode;
+        this.name = name;
+        this.desg=desg;
+        this.dept=dept;
+        this.sal = sal;
+        this.getDesignation=function(){
+            return this.desg;
+        };
+        this.getSalary=function(){
+            return this.sal;
+        }
+    }
+    emp1=new employee(1,'raghu','consultant','training',27272);
+    emp2=new employee(2,'ravi','sr engineer','it dev',37272);
+    console.log('employee 1',emp1.name);
+    console.log('employee 1 -desg',emp1.getDesignation());
+    console.log('employee 2; desg',emp1.desg);
+    console.log('employee 2 salary ',emp2.getSalary());
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <h1>Objects</h1>
+  
+    <script>
+    var emp ={
+        empcode:1,
+        name:'raghu',
+        company:'XYZ',
+        desg:'Consultant',
+        sal:393939
+    }
+
+    console.log('emp object ',emp);
+    console.log('emp code ',emp.empcode);
+    console.log('emp code ',emp['name']);
+    emp.sal=78788;
+    console.log('after updation ',emp);
+    var empnew ={
+        empcode:1,
+        name:'raghu',
+        company:'XYZ',
+        desg:'Consultant',
+        sal:393939,
+        getSalary:function (){
+            return this.sal;
+        },
+
+        getDesg:function(){
+            return this.desg;
+        }
+    }
+    console.log('salary ',empnew.getSalary());
+    console.log('designation ',empnew.getDesg());
+   </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+   <script>
+       console.log("print 2's table using while loop");
+        start =2;
+        end = 20;
+        while (start <=end ){
+            console.log(start);
+            start +=2; // start = start +2
+        }
+        console.log("print 5's table using for loop");
+        for (i=5;i<=50;i=i+5){
+            console.log(i);
+        }
+        console.log("print 4's table break at 20");
+
+        for (i=4;i<=40;i=i+4){
+            if (i==20)
+                break;
+            console.log(i);
+        }
+        console.log("print 4's table continue at 20");
+        for (i=4;i<=40;i=i+4){
+            if (i==20)
+                continue;
+            console.log(i);
+        }
+
+        age = 17;
+
+        if (age>=18){
+            console.log('eligible for vaccination');
+        }
+        else{
+            console.log('not eligible for vaccination');
+        }
+
+        // 91 to 100 - A+, 81-90 - A,71-80 - B+
+
+        marks = 87;
+        grade = '';
+        if (marks >=90 && marks <=100){
+            grade = 'A+';
+        } else if (marks >=80 && marks <=90){
+            grade = 'A';
+        } else if (marks >=70 && marks <=80){
+            grade = 'B+';
+        } else{
+            grade='Less than B+';
+        }
+
+        console.log('Your grade is ',grade);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Form Elements</title>
+</head>
+<body>
+<h1>Check Box</h1>
+<label><strong>Educational Qualification</strong></label><br>
+<input type="checkbox" name="ug">Under Graduate
+<input type="checkbox" name="pg">Post Graduate
+<input type="checkbox" name="oth">Others
+
+<h2>Input Button</h2>
+
+<input type="button" onclick="alert('Hello World!')" value="Click Me!">
+
+<h2>Color</h2>
+
+<input type="color" name="favcolor" value="#0000ff">
+
+<h2>Date</h2>
+ Birthday:
+  <input type="date" name="bday">
+
+ <h2>Date Range</h2> 
+ Enter a date before 1980-01-01:
+  <input type="date" name="bday" max="1979-12-31"><br>
+  Enter a date after 2000-01-01:
+  <input type="date" name="bday" min="2000-01-02"><br>
+
+<h2>Date Time -Local</h2>
+  <input type="datetime-local" name="bdaytime">
+<h2>Email</h2>
+  <input type="email" name="email">
+<h2>File</h2>
+Select a file: <input type="file" name="myFile">
+<h2>Number</h2>
+Quantity (between 1 and 5):
+  <input type="number" name="quantity" min="1" max="5">
+<h2>Range</h2>
+<input type="range" name="points" min="0" max="10">
+</body>
+</html>

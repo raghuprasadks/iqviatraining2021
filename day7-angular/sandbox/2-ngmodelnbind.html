@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ngbind</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <h1>ng-bind and ng-model</h1>
+
+    <div ng-app="">
+        <input type="text" name="name" id="name" placeholder="Enter your name" ng-model="name">
+        <h1>Your name is {{name}}</h1>
+
+        With ng-bind :: <h1 ng-bind="name"></h1>
+    </div>
+</body>
+</html>

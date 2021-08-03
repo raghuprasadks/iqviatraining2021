@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo's</title>
+    <style>
+
+        #container{
+            margin:auto;
+            width:80%;
+        }
+
+        #addtodos{
+            margin:auto;
+            width:80%;
+        }
+        
+        
+    </style>
+</head>
+<body onload="getTodos()">
+    <div id="container">
+        <div>
+            <h1 style="text-align: center;">Json placeholder Todos</h1>
+        </div>
+        <div id="addtodos">
+
+            <h1>Add Todo's</h1>
+            <!--<input type="text" name="id" id="id" placeholder="Enter Id"><br>-->
+            <input type="text" name="id" id="id" placeholder="Id" disabled><br>
+
+            <input type="text" name="title" id="title" placeholder="Enter Title"><br>
+            <input type="text" name="userId" id="userId" placeholder="Enter User Id"><br>
+            <input type="text" name="status" id="status" placeholder="Enter Status"><br><br>
+            <button id="add" onclick="addTodos()">Add Todos</button><br><br><br>
+            <button id="update" onclick="UpdateData()" disabled>Update Todos</button><br><br><br>
+        </div>
+        <div>
+            <table id='result'></table>
+        </div>
+    </div>
+    <script>
+
+        /**
+        completed: false
+        id: 101
+        title: "explicabo enim cumque porro aperiam occaecati minima"
+        userId: 6
+        **/
+        var todos=[];
+        function getTodos(){
+            document.getElementById('add').disabled=false;
+            document.getElementById('update').disabled=true;
+            fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response=>response.json())
+            //.then(json=>console.log(json))
+            .then(json=>showTodos(json))    
+        }
+        function showTodos(data){
+            todos=data;           
+            var dispdata=`<tr><th>Id</th><th>Title</th><th>User Id</th><th>Completed</th><th>Update</th><th>Delete</th></tr>`;
+            for (let i=0;i<todos.length;i++){
+                dispdata= dispdata +`<tr><td>${todos[i].id}</td><td>${todos[i].title}</td><td>${todos[i].userId}</td><td>${todos[i].completed}</td><td><button id=${todos[i].id} onclick="updateTodos(${todos[i].id})">Update</button></td><td><button id=${todos[i].id} onclick="deleteTodos(${todos[i].id})">Delete</button></tr>`;
+            }
+            document.getElementById('result').innerHTML=dispdata;
+        }
+
+        function updateTodos(id)
+        {
+            datatoupdate='';
+            for (i=0;i<todos.length;i++)
+            {
+               if (todos[i].id==id)
+               datatoupdate = todos[i];
+            }            
+            document.getElementById('id').value=datatoupdate.id;
+            document.getElementById('title').value=datatoupdate.title;
+            document.getElementById('userId').value=datatoupdate.userId;
+            document.getElementById('status').value=datatoupdate.completed;
+            document.getElementById('add').disabled=true;
+            document.getElementById('update').disabled=false;            
+        }
+
+        function deleteTodos(id)
+        {            
+            console.log("delete todo id ",id);
+            deleteindex=-1;
+            for (i=0;i<todos.length;i++)
+            {
+               if (todos[i].id==id)
+                deleteindex = i;
+            }
+            if (deleteindex>=0)
+            {
+                console.log('delete index::',deleteindex);
+                todos.splice(deleteindex,1);
+            }
+            showTodos(todos);
+           }
+        //fetch('https://jsonplaceholder.typicode.com/todos')
+        function addTodos(){
+            id=todos.length+1;
+            console.log('id ',id);           
+            title=document.getElementById('title').value;
+            userId=document.getElementById('userId').value;
+            status=document.getElementById('status').value;
+            //newtodo = {'id':id,'title':title,'userId':userId,'status':status};
+            fetch('https://jsonplaceholder.typicode.com/todos',            
+            {
+                headers: { "Content-Type": "application/json; charset=utf-8" },
+                method: 'POST',
+                body: JSON.stringify({
+                    id: id,
+                    title: title,
+                    userId:userId,
+                    completed:status
+                })
+            }            
+            )
+            .then(response=>response.json())
+            //.then(json=>console.log('add ',json))
+            .then(json=>addData(json))
+        
+        }
+
+        function addData(todo){
+            todos.unshift(todo);
+            showTodos(todos);        
+        }
+
+        function UpdateData(){            
+            id=document.getElementById('id').value;
+            title=document.getElementById('title').value;
+            userId=document.getElementById('userId').value;
+            status=document.getElementById('status').value;
+            url=`https://jsonplaceholder.typicode.com/todos/${id}`
+            
+            fetch(url,            
+            {
+                headers: { "Content-Type": "application/json; charset=utf-8" },
+                method: 'PUT',
+                body: JSON.stringify({
+                id: id,
+                title: title,
+                userId:userId,
+                completed:status
+                })
+            }            
+            )
+            .then(response=>response.json())
+            .then(json=>
+            {
+                console.log('updated',json);
+                for (i=0;i<todos.length;i++)
+                {
+                    if (todos[i].id==id)
+                    {
+                        updatedtodos={
+                            id: id,
+                            title: title,
+                            userId:userId,
+                            completed:status
+                        };
+                        console.log('updated todos :: ',updatedtodos);
+                        todos[i]=updatedtodos;
+                        //showTodos(todos);
+                    }            
+                }
+                showTodos(todos);
+            }          
+            
+            )
+        }
+    </script>
+    
+</body>
+</html>

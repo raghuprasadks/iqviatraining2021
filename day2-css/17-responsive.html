@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design</title>
+
+<style>
+    #container{
+        width: 100%;
+        background-color: lightblue;
+        height: 900px;
+    }
+
+    #row{
+        width: 100%;
+        height: 200px;
+        background-color: lightgrey;
+        
+
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  div {
+      width:100%;
+      background-color:red;
+      height: 200px;
+      border: 1px solid red;
+     margin: 2px;
+    padding: 2px;
+        display: inline-block;
+    
+    
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    div {
+        width:45%;
+        background-color:green;
+        height: 200px;
+        border: 1px solid red;
+        margin: auto;
+        padding: 2px;
+        display: inline-block;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    div {
+        width:23%;
+        background-color:blue;
+        height: 200px;
+        border: 1px solid red;
+        margin: auto;
+        padding: 2px;
+        display: inline-block;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    div {
+        width:20%;
+        background-color:yellow;
+        height: 200px;
+        border: 1px solid red;
+        margin: auto;
+        padding: 2px;
+        display: inline-block;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    div {
+        width:20%;
+        background-color:orange;
+        height: 200px;
+        border: 1px solid red;
+        margin: 2px;
+        padding: 2px;
+        display: inline-block;
+    }
+}
+
+</style>
+</head>
+<body>
+    <div id="container">
+        <!-- Row 1-->
+        <div id="row">
+            <div>
+                <h1>Product 1</h1>
+                <h1>Price</h1>
+            </div>
+            <div>
+                <h1>Product 2</h1>
+                <h1>Price</h1>
+            </div>
+            <div>
+                <h1>Product 3</h1>
+                <h1>Price</h1>
+            </div>
+            <div>
+                <h1>Product 4</h1>
+                <h1>Price</h1>
+            </div>
+        </div>
+
+        <!--Row 2-->
+        <div id="row">
+            <div>
+                <h1>Product 5</h1>
+                <h1>Price</h1>
+            </div>
+            <div>
+                <h1>Product 6</h1>
+                <h1>Price</h1>
+            </div>
+            <div>
+                <h1>Product 7</h1>
+                <h1>Price</h1>
+            </div>
+            <div>
+                <h1>Product 8</h1>
+                <h1>Price</h1>
+            </div>
+        </div>
+
+    </div>
+        </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+
+</head>
+<body>
+<h1 id="Calc">Calculator</h1>
+<div>
+<label>Input 1</label>
+<input id="input1" type="number"/>
+</div>
+<div>
+<label>Operator</label>
+<input id="operator1" type="text"/>
+</div>
+<div>
+<label>Input 2</label>
+<input id="input2" type="number"/>
+</div>
+<br>
+<div>
+<button onclick="CalculateMe()">Calculate</button>
+</div>
+<br>
+<div>
+<h2 id="Result">Result Of Operation is </h2>
+</div>
+<script>
+//Calculation function
+function CalculateMe(){
+num1 = document.getElementById("input1").value;
+num2 = document.getElementById("input2").value;
+operator = document.getElementById("operator1").value;
+
+// result = parseInt(num1) + parseInt(num2);
+if(operator=="+")
+{
+res = num1 + num2;
+}
+else if(operator=="-")
+{
+res = num1 - num2;
+}
+else if(operator=="*")
+{
+res = num1 * num2;
+}
+else if(operator=="/")
+{
+res = num1 / num2;
+} else{
+    res = 'Invalid Operator';
+}
+
+document.getElementById("Result").innerHTML="Result Of Operation is "+res;
+}
+</script>
+</body>
+</html>

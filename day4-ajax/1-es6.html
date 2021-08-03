@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h1>Function</h1>
+    <script>
+
+    globalvar =100;
+    num1=0
+    function addition(num1,num2){
+        return num1 + num2;
+    }
+    // arrow function
+    const add=(num1,num2)=>num1+num2;
+
+    console.log('arrow function',add(150,300));
+
+    // num1,num2 local variable
+    function subtraction(num1,num2){
+        result = num1-num2;
+        return result;
+    }
+
+    console.log('local variable ',num1);
+    result = addition(100,20);
+    console.log('Result of addition : ',result);
+    
+    function test(){
+        
+        globalvar = 999;
+        console.log('global var : test',globalvar);
+    }
+    test();
+    console.log('global var : after test',globalvar);
+   
+    // let - block level score
+
+var x = 10;
+// Here x is 10
+{
+  let x = 2;
+  // Here x is 2
+    console.log('inside block :let ',x);
+}
+
+console.log('outside block : ',x);
+
+
+var  x = 10;
+// Here x is 10
+{  
+  const x = 2;
+  // Here x is 2
+ // x=9; error is thrown
+}
+
+// Here x is 10
+
+const f1 = (x, y) => { return x * y };
+
+res = f1(100,10);
+console.log('result of calling x function ',res);
+
+const cars = ["BMW", "Volvo", "Mini"];
+let text = "";
+
+for (let x of cars) {
+  text += x + " ";
+}
+
+console.log('for loop ',text);
+
+
+// Create Objects
+const apples = {name: 'Apples'};
+const bananas = {name: 'Bananas'};
+const oranges = {name: 'Oranges'};
+
+// Create a new Map
+const fruits = new Map();
+
+// Add the Objects to the Map
+fruits.set(apples, 500);
+fruits.set(bananas, 300);
+fruits.set(oranges, 200);
+
+val=fruits.get(apples);
+console.log('value ',val);
+    </script>
+    
+</body>
+</html>
