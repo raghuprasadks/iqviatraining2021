@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <title>Directive</title>
 </head>
-<body>
+<body ng-app="myApp">
+    <!-- as an element-->
+<w3-test-directive></w3-test-directive>
 
-    <div ng-app="myApp">
+<!-- as an attribute-->
+<!-- <div w3-test-directive></div>-->
+    <script>
 
+        var app=angular.module("myApp",[]);
+        app.directive("w3TestDirective",function()
+        {
+            return {
+                template: "<h1>Made by a directive!</h1>"
+            };
 
-    </div>
-
-    <script></script>
+        });
+    </script>
     
 </body>
 </html>

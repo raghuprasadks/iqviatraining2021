@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Simple Calculator</title>
+</head>
+<body ng-app="calcApp" ng-controller="calcController">
+    <h1>Simple Calculator</h1>
+    <input type="text" name="num1" id="num1" ng-model="num1" placeholder="Enter First Number">
+    <input type="text" name="oper" id="oper" ng-model="oper" placeholder="Enter Operator">
+    <input type="text" name="num2" id="num2" ng-model="num2" placeholder="Enter Second Number">
+    <!--<button ng-click="calculate()"></button>-->
+    <p ng-bind="result()"></p>
+    <script>
+        var app =angular.module('calcApp',[]);
+        app.controller('calcController',function($scope)
+        {
+            $scope.num1 = 0;
+            $scope.num2=0;
+            $scope.result=0;
+            $scope.result=function(){
+                output =0;
+                if ($scope.oper=='+')
+                    output= parseInt($scope.num1)+parseInt($scope.num2);
+                else if ($scope.oper=='-')
+                    output= parseInt($scope.num1)-parseInt($scope.num2);
+                else if ($scope.oper=='*')
+                    output= parseInt($scope.num1)*parseInt($scope.num2);
+                else if ($scope.oper=='/')
+                    output= parseInt($scope.num1)/parseInt($scope.num2);
+                else
+                    output='invalid operator';
+                return output;
+            }
+        }
+        );
+    </script>
+</body>
+</html>

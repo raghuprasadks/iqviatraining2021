@@ -33,11 +33,14 @@ echo "# iqviatraining2021" >> README.md
 git init
 git add README.md
 git add .
+git status
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/raghuprasadks/iqviatraining2021.git
 git push -u origin main
 
+git clone https://github.com/raghuprasadks/iqviatraining2021.git
 
+https://www.slideshare.net/NexThoughts/angularjs-50157319
 
 
