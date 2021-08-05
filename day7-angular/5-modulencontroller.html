@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Module and Controller</title>
+</head>
+<body>
+    <h1>Module and Controller</h1>
+    <div ng-app="myapp" ng-controller="mycontroller">
+        {{firstName +" - "+lastName}}
+        <h1>Call with function-- {{fullName()}}</h1>
+        
+    </div>
+    <script>
+        var app = angular.module("myapp",[]);
+        app.controller("mycontroller",function($scope){
+            $scope.firstName='Raghu';
+            $scope.lastName='Prasad';
+            $scope.fullName=function(){
+                return $scope.firstName + " ## "+$scope.lastName;
+            };
+        });
+    </script>
+</body>
+</html>

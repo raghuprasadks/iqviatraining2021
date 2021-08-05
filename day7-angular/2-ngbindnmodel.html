@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>ng-bind and ng-model</title>
+</head>
+<body ng-app="">
+    <h1>ng-bind and ng-model</h1>
+    <input type="text" name="name" id="name" ng-model="name" placeholder="Enter your name"><br>
+    ng-bind
+    <h2 ng-bind="name"></h2><br>
+    expression
+    <h2>{{name}}</h2>
+</body>
+</html>
