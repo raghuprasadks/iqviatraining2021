@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Two Way Data Binding</title>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    Name : <input type="text" ng-model="name">
+    <h1>Your name is {{name}}</h1>
+   <!--
+   <script>
+        var appmodel=angular.module("myApp",[]);
+        appmodel.controller("myController",function($scope){
+            //console.log('your name is ',$scope.name);
+            $scope.name="raghu prasad";
+
+        });
+    </script>
+    -->
+
+    <script src="controller-2way.js"></script>
+</body>
+</html>

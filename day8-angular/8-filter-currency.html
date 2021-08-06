@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Filter</title>
+</head>
+<body ng-app="filterApp" ng-controller="filterController">
+
+    <h1>Currency Filter</h1>
+    <p>Default Currency - {{ Value | currency }}</p>
+    <p>Value in INR - {{ Value | currency : ' INR '}}</p>
+    <p>Value with decimal 0 - {{ Value | currency:'INR':0}}</p>
+    <p>Value with decimal 2 - {{ Value | currency:'INR':2}}</p>
+    <p>Value with Custom currency - {{ Value | currency:'INR - Symbol':2}}</p>
+    <script>
+        var app=angular.module("filterApp",[]);
+        app.controller("filterController",function($scope){
+            $scope.Value=100.23;
+        });
+    </script>
+</body>
+</html>

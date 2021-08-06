@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>E Commerce</title>
+
+    <style>
+
+            input{
+                widows: 20%;
+                height: 25px;
+            }
+            label{
+                padding-right: 1%;
+            }
+            h2{
+                width:100%;
+            }
+            h1{
+                background-color: darkcyan; width:100%; text-align:center;
+            }
+    </style>
+
+</head>
+<body ng-app="commerceApp" ng-controller="commerceController">
+
+    <h1>ECommerce</h1>
+
+    <label name="mobile">Mobile</label>
+    <input type="text" name="MobileName" id="MobileName" ng-model="MobileName"><br><br>
+    <label name="puramt">Purchase Amount</label>
+    <input type="text" name="PurchaseAmount" id="PurchaseAmount" ng-model="PurchaseAmount"><br><br>
+    <label name="havecard">Do you have Card?</label>
+    <input type="text" name="Card" id="Card" ng-model="Card"><br><br>
+
+    <hr>
+    <h2>Bill</h2>
+
+    <div>
+
+     <label>Purchase Amount : </label>
+    <Label>{{PurchaseAmount}}</Label><br><br>
+
+    <label name="disc">Discount : </label>
+    <label>{{Discount()}}</label><br><br>
+
+    <label name="bill">Bill Amount : </label>
+    <label>{{PurchaseAmount-discountAmt}}</label><br><br>
+
+    </div>
+
+    <script>
+        var app=angular.module("commerceApp",[]);
+        app.controller("commerceController",function($scope){
+            $scope.discountAmt=0;
+            $scope.Discount =function(){
+
+                discountAmt=0;
+                additionalCarddiscountAmt=0;
+                if($scope.PurchaseAmount<=10000)
+                {
+                    discountAmt = ($scope.PurchaseAmount*(10/100));
+                }
+                else if($scope.PurchaseAmount>10000 && $scope.PurchaseAmount<=20000)
+                {
+                    discountAmt = ($scope.PurchaseAmount*(20/100));
+                }
+                else if($scope.PurchaseAmount>20000 &&  $scope.PurchaseAmount<=30000)
+                {
+                    discountAmt = ($scope.PurchaseAmount*(30/100));
+
+                }
+                else if($scope.PurchaseAmount>30000)
+                {
+                    discountAmt = ($scope.PurchaseAmount*(35/100));
+                } 
+
+                if($scope.Card=="yes")
+                        additionalCarddiscountAmt = ($scope.PurchaseAmount*(5/100));
+                discountAmt = discountAmt +  additionalCarddiscountAmt;
+                $scope.discountAmt = discountAmt;
+                return discountAmt;
+            };
+/**
+            $scope.BillAmount = function(){
+
+                discountAmt=0;
+                billamount = 0;
+                if($scope.PurchaseAmount>=10000)
+                {
+                    if($scope.Card=="yes")
+                        discountAmt = ($scope.PurchaseAmount*(15/100));
+                    else
+                        discountAmt = ($scope.PurchaseAmount*(10/100));
+
+                    billamount = $scope.PurchaseAmount -discountAmt;
+                }
+                else if($scope.PurchaseAmount>10000 && $scope.PurchaseAmount<=20000)
+                {
+                    if($scope.Card=="yes")
+                        discountAmt = ($scope.PurchaseAmount*(25/100));
+                    else
+                        discountAmt = ($scope.PurchaseAmount*(20/100));
+
+                        billamount = $scope.PurchaseAmount -discountAmt;
+                }
+                else if($scope.PurchaseAmount>20000 &&  $scope.PurchaseAmount<=30000)
+                {
+                    if($scope.Card=="yes")
+                        discountAmt = ($scope.PurchaseAmount*(35/100));
+                    else
+                        discountAmt = ($scope.PurchaseAmount*(30/100));
+
+                        billamount = $scope.PurchaseAmount -discountAmt;
+                }
+
+                else if($scope.PurchaseAmount>30000)
+                {
+                    if($scope.Card=="yes")
+                        discountAmt = ($scope.PurchaseAmount*(40/100));
+                    else
+                        discountAmt = ($scope.PurchaseAmount*(35/100));
+
+                        billamount = $scope.PurchaseAmount -discountAmt;
+                } 
+                return billamount;
+            };
+**/
+  
+
+        });
+
+    </script>
+</body>
+</html>

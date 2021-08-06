@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Directive</title>
+</head>
+<body ng-app="myApp">
+    <h1>Directive as a class</h1>
+    <!-- directive: w3-test-directive-->
+    <div class="w3-test-directive"></div>
+   
+    
+    <!--
+        <w3-test-directive></w3-test-directive>
+    <h1>Directive as an attribute</h1>
+    <div w3-test-directive></div>
+   restrict:"C" - class 
+   restrict:"A" - attribute
+   restrict:"M" - comment
+-->
+    <script>
+        var appModule=angular.module("myApp",[]);
+        appModule.directive("w3TestDirective",function(){
+            return{
+                restrict:"C",
+                replace : true,
+                template:"<h1>Directive restricted to be used in a class</h1>"
+            };
+        });
+    </script>
+</body>
+</html>
